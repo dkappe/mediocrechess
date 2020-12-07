@@ -1,0 +1,23 @@
+<configuration>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>mediocreDebug.log</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n%ex{20}</pattern>
+    </encoder>
+  </appender>
+  
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+   <encoder>
+<!--       <pattern>%d{HH:mm:ss.SSS} [%mdc] %-5level %logger{36} - %msg%n%ex{20}</pattern> -->
+		<pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+        
+  <root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
